@@ -11,7 +11,8 @@ template_id2 = "loe1yHWr************************************"
 # 晚安心语
 template_id3 = "oGzGz2B-cC2AXyHf4s_DKQpddsC0"
 # 接收公众号消息的微信号
-
+# 微信用户配置（必填！）
+user = ["沧桑男人"]  # 从测试号页面复制的用户微信号
 # 信息配置
 # 所在省份
 province = "江苏"
@@ -54,6 +55,7 @@ good_Night_Key = "4a1255b8e8997ca96df20a7ecd78304f"
 # 第四讲: {{fourthClass.DATA}}
 # 第五讲: {{fifthClass.DATA}}
 # 第六讲: {{sixthClass.DATA}}
+
 
 
 
