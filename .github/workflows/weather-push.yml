@@ -1,0 +1,30 @@
+name: 每日天气推送
+
+on:
+  schedule:
+    - cron: '0 23 * * *'  # 每天23:00 UTC时间（北京时间7:00）
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  push-weather:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+      
+      - name: 设置Python环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: 安装依赖
+        run: |
+          pip install requests
+          pip install schedule
+      
+      - name: 执行推送
+        env:
+          APPID: ${{ secrets.APPID }}
+          APPSECRET: ${{ secrets.APPSECRET }}
+        run: python main.py
