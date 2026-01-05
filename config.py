@@ -5,7 +5,7 @@ app_id = "wx5a98c2f0de8c4db8"
 app_secret = "bfe6a4efcad4f6e1e40c9a54e15ce79c"
 # 模板消息id
 # 每日消息
-template_id1 = "wX-************************************"
+template_id1 = "55U3skkejHlOuM8ftZ3K84aXhx7qiayzS7q8lzw74lk"
 # 课程消息,上课提醒
 template_id2 = "loe1yHWr************************************"
 # 晚安心语
@@ -110,4 +110,5 @@ classes = \
 # 第四讲: {{fourthClass.DATA}}
 # 第五讲: {{fifthClass.DATA}}
 # 第六讲: {{sixthClass.DATA}}
+
 
