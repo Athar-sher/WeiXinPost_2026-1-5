@@ -1,28 +1,28 @@
 # 公众号配置
 # 公众号appId
-app_id = "wx******************"
+app_id = "wx5a98c2f0de8c4db8"
 # 公众号appSecret
-app_secret = "f9a80260d33******************"
+app_secret = "bfe6a4efcad4f6e1e40c9a54e15ce79c"
 # 模板消息id
 # 每日消息
 template_id1 = "wX-************************************"
 # 课程消息,上课提醒
 template_id2 = "loe1yHWr************************************"
 # 晚安心语
-template_id3 = "-fun9-2************************************"
+template_id3 = "oGzGz2B-cC2AXyHf4s_DKQpddsC0"
 # 接收公众号消息的微信号
 # 这是openid
 user = ["ojhdR50T******************"]
 
 # 信息配置
 # 所在省份
-province = "四川"
+province = "江苏"
 # 所在城市
-city = "绵阳"
+city = "南京市"
 # 生日，如果月份或者日期小于10，直接用对应的数字即可，例如1997-1-1，---------倒计时
-birthday = "2022-9-9"
+birthday = "2001-9-26"
 # 在一起的日子，格式同上------------计时器
-love_date = "2001-12-1"
+love_date = "2024-8-15"
 # 天行数据晚安心语 key
 good_Night_Key = "4082bfd944c******************"
 # -------------------------------------------------------------------------
@@ -110,3 +110,4 @@ classes = \
 # 第四讲: {{fourthClass.DATA}}
 # 第五讲: {{fifthClass.DATA}}
 # 第六讲: {{sixthClass.DATA}}
+
