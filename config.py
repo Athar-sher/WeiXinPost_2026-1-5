@@ -24,6 +24,8 @@ birthday = "2001-9-26"
 love_date = "2024-8-15"
 # 天行数据晚安心语 key
 good_Night_Key = "4a1255b8e8997ca96df20a7ecd78304f"
+# 在 config.py 末尾添加
+post_Time = "08:00"  # 设置每日推送时间（24小时制）
 # -------------------------------------------------------------------------
 # 模板 1：每日提醒模板
 # 本周是开学的第: {{weeks.DATA}} 周
@@ -55,6 +57,7 @@ good_Night_Key = "4a1255b8e8997ca96df20a7ecd78304f"
 # 第四讲: {{fourthClass.DATA}}
 # 第五讲: {{fifthClass.DATA}}
 # 第六讲: {{sixthClass.DATA}}
+
 
 
 
