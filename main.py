@@ -28,15 +28,24 @@ def get_weather(province, city):
 
 
 # ---------- 推送 ----------
-moyu_resp = post("http://api.tianapi.com/moyu/index", params={"key": config.tian_api_key}).json()
-if moyu_resp["code"] == 200 and moyu_resp["newslist"]:
-    item = moyu_resp["newslist"][0]
-else:
-    item = {
-        "content": "今日暂无摸鱼数据，喝杯热水继续打工！",
-        "holidaycountdown": "距周末还有未知天",
-        "tip": "冷知识：多喝水能缓解打工焦虑～"
+# ---------- 推送 ----------
+def send_message(to_user, access_token, city, weather, max_t, min_t):
+    url = f"https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={access_token}"
+    today = date.today()
+    week_list = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
+    week = week_list[today.weekday()]
+
+    data = {
+        "touser": to_user[0],
+        "template_id": config.template_id1,
+        "data": {
+            "date": {"value": f"{today} {week}"},
+            "city": {"value": city},
+            "weather": {"value": f"{weather}  {max_t}℃ / {min_t}℃"}
+        }
     }
+    resp = post(url, json=data)
+    print("微信回执：", resp.text)
 
 # ---------- 主入口 ----------
 if __name__ == '__main__':
@@ -46,6 +55,7 @@ if __name__ == '__main__':
     weather, max_t, min_t = get_weather(province, city)
     send_message(user, accessToken, city, weather, max_t, min_t)
     print("每日天气推送完成！")
+
 
 
 
