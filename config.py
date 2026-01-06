@@ -30,6 +30,11 @@ post_Time = "08:00"       # 推送时间（之前漏的也可能没写）
 # ========== 课程表（不需要就留空或False） ==========
 ENABLE_CLASS_PUSH = False
 CLASS_SCHEDULE = {}      # 留空即可
+# ===== 日期配置（必须） =====
+year  = 2025
+month = 1
+day   = 6
+post_Time = "08:00"
 # -------------------------------------------------------------------------
 # 模板 1：每日提醒模板
 # 本周是开学的第: {{weeks.DATA}} 周
@@ -61,6 +66,7 @@ CLASS_SCHEDULE = {}      # 留空即可
 # 第四讲: {{fourthClass.DATA}}
 # 第五讲: {{fifthClass.DATA}}
 # 第六讲: {{sixthClass.DATA}}
+
 
 
 
