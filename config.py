@@ -16,7 +16,7 @@ post_Time      = "08:00"              # 每日天气推送时间
 good_Night_Time = "23:00"             # 晚安心语推送时间
 
 # ========== 模板ID（创建后填写） ==========
-template_id1 = "55U3skkejHlOuM8ftZ3K84aXhx7qiayzS7q8lzw74lk"   # 每日天气
+template_id1 = "5QYzukhL9PwdlSKFymriTIL8IDLXtQgxgJJwECoZvOE"   # 每日天气
 template_id2 = ""   # 课程提醒
 template_id3 = "Jdccz053D2DWFCKviTqBUjjRLxoXqgt-vyp7BvDxGZs"   # 晚安心语
 
@@ -42,5 +42,6 @@ wind   = "西风 4-5级"       # 可继续用原接口字段，也可自定义
 luck   = "幸运色：雾霾蓝｜贵人方位：东南"
 tips   = "多云转凉，外套+围巾最稳妥"
 note   = "周三小周末，喝杯热拿铁再出发～"
+
 
 
