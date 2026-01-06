@@ -1,7 +1,7 @@
 # ========== 微信测试号 ==========
 app_id     = "wx5a98c2f0de8c4db8"
 app_secret = "bfe6a4efcad4f6e1e40c9a54e15ce79c"
-user       = ["沧桑男人"]          # 从测试号后台「用户列表」复制
+user       = ["oGzGz2B-cC2AXyHf4s_DKQpddsC0"]          # 从测试号后台「用户列表」复制
 
 # ========== 天气 ==========
 tian_api_key = "4a1255b8e8997ca96df20a7ecd78304f"                  # 天行数据 key（源码里其实没用，保留即可）
@@ -36,3 +36,4 @@ course_Time = ["08:00", "09:00", "10:00",
 
 # ========== 天行数据晚安心语接口 ==========
 good_Night_Key = "4a1255b8e8997ca96df20a7ecd78304f"   # 去天行数据申请「晚安心语」接口后填 key
+
