@@ -30,19 +30,27 @@ def get_weather(province, city):
 # ---------- 推送 ----------
 def send_message(to_user, access_token, city, weather, max_t, min_t):
     url = f"https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={access_token}"
+
+    # ===== 调用天行每日简报 =====
+    brief_resp = post("http://api.tianapi.com/brief/index", params={"key": config.tian_api_key}).json()
+    if brief_resp["code"] == 200:
+        content = brief_resp["newslist"][0]["cont"]   # 官方已排版好
+    else:
+        content = "今日暂无简报，祝一切顺利！"
+
     today = date.today()
     week_list = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
     week = week_list[today.weekday()]
 
+    # 模板只留 4 个字段，颜色用微信默认黑灰，不再自定义
     data = {
         "touser": to_user[0],
         "template_id": config.template_id1,
         "data": {
-            "date": {"value": f"{today} {week}", "color": "#00FFFF"},
-            "city": {"value": city, "color": "#808A87"},
-            "weather": {"value": weather, "color": "#ED9121"},
-            "max_temperature": {"value": max_t, "color": "#FF6100"},
-            "min_temperature": {"value": min_t, "color": "#00FF00"}
+            "date": {"value": f"{today} {week}"},
+            "city": {"value": city},
+            "weather": {"value": f"{weather}  {max_t}℃ / {min_t}℃"},
+            "brief": {"value": content}          # 天行返回的完整文案
         }
     }
     resp = post(url, json=data)
@@ -57,3 +65,4 @@ if __name__ == '__main__':
     weather, max_t, min_t = get_weather(province, city)
     send_message(user, accessToken, city, weather, max_t, min_t)
     print("每日天气推送完成！")
+
