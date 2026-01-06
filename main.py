@@ -62,22 +62,29 @@ def get_Today_Week():
 
 # 获取本周课程
 def get_Week_Classes(w):
-    if w is not None:
-        week_Class = config.classes.get(w)
-    else:
-        week = get_Today_Week()
-        week_Class = config.classes.get(week)
-    return week_Class
+    week = w if w is not None else get_Today_Week()
+    # 找不到就返回 7 节空课，避免 None
+    return config.classes.get(week, ["", "", "", "", "", "", ""])
+#def get_Week_Classes(w):
+    #if w is not None:
+       # week_Class = config.classes.get(w)
+   # else:
+     #   week = get_Today_Week()
+    #    week_Class = config.classes.get(week)
+#    return week_Class
 
 
 # 获取今日课程
 def get_Today_Class():
-    year = localtime().tm_year
-    month = localtime().tm_mon
-    day = localtime().tm_mday
-    today = datetime.date(datetime(year=year, month=month, day=day))
-    todayClasses = get_Week_Classes(None)[today.weekday()]
-    return todayClasses
+    # 直接返回 7 节空课，不再计算
+    return ["", "", "", "", "", "", ""]
+#def get_Today_Class():
+   # year = localtime().tm_year
+ #   month = localtime().tm_mon
+ #   day = localtime().tm_mday
+   # today = datetime.date(datetime(year=year, month=month, day=day))
+#    todayClasses = get_Week_Classes(None)[today.weekday()]
+#    return todayClasses
 
 
 # 获取指定星期几的课程
@@ -397,3 +404,4 @@ if __name__ == '__main__':
             print("开始睡眠:等待推送晚安心语")
             time.sleep(defference)
             print("结束睡眠")
+
